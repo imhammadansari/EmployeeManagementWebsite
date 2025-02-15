@@ -1,6 +1,5 @@
 import { Navigate, Route, Routes } from "react-router-dom";
 import DashboardPage from "./pages/DashboardPage";
-import AddEmployee from "./pages/addEmployee";
 import ViewEmployee from "./pages/ViewEmployee";
 import UpdateEmployee from "./pages/UpdateEmployee";
 import DeleteEmployee from "./pages/DeleteEmployee";
@@ -31,7 +30,6 @@ function App() {
         <Route path="/home" element={<HomePage />} />
         <Route path="/adminLogin" element={<AdminLogin />} />
         <Route path="/adminDashboard" element={<DashboardPage />} />
-        <Route path="/addEmployee" element={<AddEmployee />} />
         <Route path="/viewEmployees" element={<ViewEmployee />} />
         <Route path="/deleteEmployees" element={<DeleteEmployee />} />
         <Route path="/updateEmployees" element={<UpdateEmployee />} />
