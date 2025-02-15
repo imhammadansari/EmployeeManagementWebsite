@@ -11,7 +11,7 @@ const PendingLeaves = () => {
 
     const getEmployees = async () => {
         try {
-            const response = await axios.get("http://localhost:8000/employees/viewUsers");
+            const response = await axios.get("https://backend-hammad-ansaris-projects.vercel.app//employees/viewUsers");
             setEmployees(response.data.employee);
         } catch (error) {
             console.log(error.message);
@@ -20,7 +20,7 @@ const PendingLeaves = () => {
 
     const handleApprove = async (employeeId, leaveId) => {
         try {
-            const response = await axios.post("http://localhost:8000/employees/approveRejectLeave", {
+            const response = await axios.post("https://backend-hammad-ansaris-projects.vercel.app//employees/approveRejectLeave", {
                 employeeId,
                 leaveId,
                 status: "Approved"
@@ -33,7 +33,7 @@ const PendingLeaves = () => {
 
     const handleReject = async (employeeId, leaveId) => {
         try {
-            const response = await axios.post("http://localhost:8000/employees/approveRejectLeave", {
+            const response = await axios.post("https://backend-hammad-ansaris-projects.vercel.app//employees/approveRejectLeave", {
                 employeeId,
                 leaveId,
                 status: "Rejected"

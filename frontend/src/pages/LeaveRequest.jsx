@@ -17,7 +17,7 @@ const LeaveRequest = () => {
         e.preventDefault();
 
         try {
-            const response = await axios.post(`http://localhost:8000/employees/leaveRequest`, {
+            const response = await axios.post(`https://backend-hammad-ansaris-projects.vercel.app//employees/leaveRequest`, {
                 leavetype,
                 department,
                 days,

@@ -13,7 +13,7 @@ const UpdateAttendance = () => {
     useEffect(() => {
         const fetchAttendance = async () => {  
             try {  
-                const response = await axios.get(`http://localhost:8000/employees/viewAttendanceById/${attendanceId}`);  
+                const response = await axios.get(`https://backend-hammad-ansaris-projects.vercel.app//employees/viewAttendanceById/${attendanceId}`);  
                 const attendanceData = response.data.attendance;  
         
                 if (attendanceData) {  
@@ -40,7 +40,7 @@ const UpdateAttendance = () => {
         }
 
         try {
-            const response = await axios.post(`http://localhost:8000/employees/updateAttendance/${attendanceId}`, {
+            const response = await axios.post(`https://backend-hammad-ansaris-projects.vercel.app//employees/updateAttendance/${attendanceId}`, {
                 attendanceId, attendanceMark
             });
             console.log(response);

@@ -13,7 +13,7 @@ const ViewLeave = () => {
 
   const getEmployee = async () => {
     try {
-      const response = await axios.get("http://localhost:8000/employees/viewProfile");
+      const response = await axios.get("https://backend-hammad-ansaris-projects.vercel.app//employees/viewProfile");
 
       setemployee(response.data.employee.leave);
 

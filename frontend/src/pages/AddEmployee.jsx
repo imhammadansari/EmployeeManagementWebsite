@@ -43,7 +43,7 @@ function AddEmployee() {
     }
 
     try {
-      const response = await axios.post("http://localhost:8000/employees/registerUser", {
+      const response = await axios.post("https://backend-hammad-ansaris-projects.vercel.app//employees/registerUser", {
         firstname,
         lastname,
         email,

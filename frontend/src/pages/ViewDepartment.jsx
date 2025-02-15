@@ -12,7 +12,7 @@ const ViewDepartment = () => {
 
   const getDepartment = async () => {
     try {
-      const response = await axios.get('http://localhost:8000/department/viewDepartment');
+      const response = await axios.get('https://backend-hammad-ansaris-projects.vercel.app//department/viewDepartment');
       setdepartmentname(response.data.department);
     } catch (error) {
       //   if(error.response){

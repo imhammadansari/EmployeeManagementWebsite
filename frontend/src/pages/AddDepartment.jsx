@@ -20,7 +20,7 @@ const AddDepartment = () => {
     }
 
     try {
-      const response = await axios.post("http://localhost:8000/department/addDepartment", {
+      const response = await axios.post("https://backend-hammad-ansaris-projects.vercel.app//department/addDepartment", {
         name
       })
 
