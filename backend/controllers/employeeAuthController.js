@@ -1,5 +1,5 @@
 import employeeModule from "../models/employee-model.js";
-import bcrypt from "bcrypt";
+import bcrypt from 'bcryptjs';
 import jwt from "jsonwebtoken";
 
 export const registeredUser = async function (req, res) {  
