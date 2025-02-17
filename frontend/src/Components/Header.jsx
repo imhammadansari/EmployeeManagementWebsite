@@ -13,7 +13,7 @@ const Header = () => {
 
 const getName = async () => {
     try {
-        const response = await axios.get(`http://localhost:8000/admin/getAdmin`);
+        const response = await axios.get(`https://employeemanagementwebsite.onrender.com/admin/getAdmin`);
         setname(response.data.admin);
     } catch (error) {
         console.error(error.response?.data || error.message);
@@ -22,7 +22,7 @@ const getName = async () => {
 
 const adminLogout = async () => {
     try {
-        const response = await axios.post("http://localhost:8000/admin/adminLogout");
+        const response = await axios.post("https://employeemanagementwebsite.onrender.com/admin/adminLogout");
         setlogout(response);
 
         if(response.status === 200){

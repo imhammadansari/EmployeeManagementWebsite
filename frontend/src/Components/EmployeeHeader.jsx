@@ -12,7 +12,7 @@ const EmployeeHeader = () => {
 
     const getEmployee = async () => {
         try {
-          const response = await axios.get('http://localhost:8000/employees/viewProfile');
+          const response = await axios.get('https://employeemanagementwebsite.onrender.com/employees/viewProfile');
           setname(response.data.employee);
         } catch (error) {
           console.log(error.message);
@@ -21,7 +21,7 @@ const EmployeeHeader = () => {
     
 const employeeLogout = async () => {
     try {
-        const response = await axios.post("http://localhost:8000/employees/employeeLogout");
+        const response = await axios.post("https://employeemanagementwebsite.onrender.com/employees/employeeLogout");
         setlogout(response);
 
         if(response.status === 200){

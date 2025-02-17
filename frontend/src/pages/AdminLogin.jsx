@@ -15,7 +15,7 @@ function AdminLogin() {
     setLoading(true);
 
     try {
-      const response = await axios.post("http://localhost:8000/admin/adminLogin", {
+      const response = await axios.post("https://employeemanagementwebsite.onrender.com/admin/adminLogin", {
         email,
         password
       });
