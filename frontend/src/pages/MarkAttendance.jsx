@@ -29,7 +29,7 @@ const MarkAttendance = () => {
         }
 
         try {
-            const response = await axios.post(`https://employeemanagementwebsite.onrender.com/employees/markAttendance`, {
+            const response = await axios.post(`http://localhost:8000/employees/markAttendance`, {
                 attendanceMark,
                 date,
                 time,

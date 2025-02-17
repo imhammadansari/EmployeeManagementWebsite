@@ -17,7 +17,7 @@ const LeaveRequest = () => {
         e.preventDefault();
 
         try {
-            const response = await axios.post(`https://employeemanagementwebsite.onrender.com/employees/leaveRequest`, {
+            const response = await axios.post(`http://localhost:8000/employees/leaveRequest`, {
                 leavetype,
                 department,
                 days,

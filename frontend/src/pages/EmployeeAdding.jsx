@@ -43,7 +43,7 @@ const EmployeeAdding = () => {
     }
 
     try {
-      const response = await axios.post("https://employeemanagementwebsite.onrender.com/employees/registerUser", {
+      const response = await axios.post("http://localhost:8000/employees/registerUser", {
         firstname,
         lastname,
         email,

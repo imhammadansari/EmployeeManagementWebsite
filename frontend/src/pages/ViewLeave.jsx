@@ -13,7 +13,7 @@ const ViewLeave = () => {
 
   const getEmployee = async () => {
     try {
-      const response = await axios.get("https://employeemanagementwebsite.onrender.com/employees/viewProfile");
+      const response = await axios.get("http://localhost:8000/employees/viewProfile");
 
       setemployee(response.data.employee.leave);
 

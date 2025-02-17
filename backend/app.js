@@ -15,7 +15,7 @@ import departmentRouter from "./routes/departmentRouter.js";
 const __dirname = path.resolve();
 
 app.use(cors({
-    origin: "https://employeemanagementwebsite.onrender.com", 
+    origin: "http://localhost:5173", 
     credentials: true
 }));
 

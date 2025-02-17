@@ -7,7 +7,7 @@ function ViewEmployee() {
 
   const getEmployeeDetails = async () => {
     try {
-      const response = await axios.get('https://employeemanagementwebsite.onrender.com/employees/viewUsers');
+      const response = await axios.get('http://localhost:8000/employees/viewUsers');
       setempDetails(response.data.employee);
     } catch (error) {
       if (error.response) {
