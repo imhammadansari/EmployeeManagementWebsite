@@ -20,6 +20,7 @@ import HomePage from "./pages/HomePage";
 import MarkAttendance from "./pages/MarkAttendance";
 import AttendanceView from "./pages/AttendanceView";
 import UpdateAttendance from "./pages/UpdateAttendance";
+import EmployeeAdding from "./pages/EmployeeAdding";
 
 
 function App() {
@@ -30,6 +31,7 @@ function App() {
         <Route path="/home" element={<HomePage />} />
         <Route path="/adminLogin" element={<AdminLogin />} />
         <Route path="/adminDashboard" element={<DashboardPage />} />
+        <Route path="/addEmployee" element={<EmployeeAdding />} />
         <Route path="/viewEmployees" element={<ViewEmployee />} />
         <Route path="/deleteEmployees" element={<DeleteEmployee />} />
         <Route path="/updateEmployees" element={<UpdateEmployee />} />
