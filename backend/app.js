@@ -19,7 +19,7 @@ app.use(cors({
     credentials: true
 }));
 
-const PORT = process.env.PORT || 8000;
+const PORT = process.env.PORT || 8080;
 const URL = process.env.MONGODB_URL;
 const connectDb = async () => {
     try {
