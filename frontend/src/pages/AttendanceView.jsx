@@ -19,7 +19,7 @@ const AttendanceView = () => {
         }
 
         try {
-            const response = await axios.get(`https://backend-hammad-ansaris-projects.vercel.app//employees/viewAttendance/${employeeEmail}`);
+            const response = await axios.get(`http://localhost:8000/employees/viewAttendance/${employeeEmail}`);
             setattendance(response.data.employee);
             console.log(response.data.employee);
         } catch (error) {
@@ -30,7 +30,7 @@ const AttendanceView = () => {
 
     const deleteAttend = async (attendanceId) => {
         try {
-            const response = await axios.post(`https://backend-hammad-ansaris-projects.vercel.app//employees/deleteAttendance/${attendanceId}`);
+            const response = await axios.post(`http://localhost:8000/employees/deleteAttendance/${attendanceId}`);
             setdeleteAttendance(prevAttendance => {
                 prevAttendance.filter(item => item._id !== attendanceId)
             });

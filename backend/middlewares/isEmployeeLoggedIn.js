@@ -1,7 +1,7 @@
-const jwt = require("jsonwebtoken");  
-const employeeModel = require("../models/employee-model");  
+import jwt from "jsonwebtoken";  
+import employeeModel from "../models/employee-model.js";  
 
-module.exports = async function(req, res, next) {  
+export default async function(req, res, next) {  
     if (!req.cookies.token) {  
         return res.status(401).send("Employee must be logged in!");  
     } else {  

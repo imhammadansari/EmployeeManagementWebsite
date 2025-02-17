@@ -12,7 +12,7 @@ const EmployeeLogin = () => {
     e.preventDefault();
 
     try {
-      const response = await axios.post("https://backend-hammad-ansaris-projects.vercel.app//employees/employeeLogin", {
+      const response = await axios.post("http://localhost:8000/employees/employeeLogin", {
         email: email,
         password: password
       });

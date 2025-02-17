@@ -20,7 +20,7 @@ const DeleteDepartment = () => {
         }
 
         try {
-            const response = await axios.post(`https://backend-hammad-ansaris-projects.vercel.app//department/deleteDepartment`, {
+            const response = await axios.post(`http://localhost:8000/department/deleteDepartment`, {
                 name
             })
 

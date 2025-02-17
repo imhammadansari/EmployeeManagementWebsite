@@ -1,6 +1,4 @@
-const mongoose = require('mongoose');
-mongoose.connect('mongodb://127.0.0.1:27017/employeeManagementSystem');
-
+import mongoose from 'mongoose';
 
 const adminSchema = mongoose.Schema({
     name: String,
@@ -8,4 +6,4 @@ const adminSchema = mongoose.Schema({
     password: String
 })
 
-module.exports = mongoose.model("admin", adminSchema);
+export default mongoose.model("admin", adminSchema);

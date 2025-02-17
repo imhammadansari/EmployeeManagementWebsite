@@ -1,7 +1,7 @@
-const jwt = require("jsonwebtoken");  
-const adminModel = require("../models/admin-model");  
+import jwt from "jsonwebtoken";  
+import adminModel from "../models/admin-model.js";  
 
-module.exports = async function(req, res, next) {  
+export default async function(req, res, next) {  
 
     if (!req.cookies.token) {  
         return res.status(401).send("Admin must be logged in!");  

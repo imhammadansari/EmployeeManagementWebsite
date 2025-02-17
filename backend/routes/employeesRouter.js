@@ -1,8 +1,8 @@
-const express = require("express");
+import express from 'express';
 const router = express.Router();
-const { registeredUser, viewUsers, updateUsers, deleteUsers, viewUserByEmail, addLeave, employeeLoggedin, approveRejectLeave, ViewProfile, EmployeeLogout, MarkAttendance, ViewAttendanceByEmail, UpdateAttendance, ViewAttendance, viewAttendanceById, DeleteAttendance } = require("../controllers/employeeAuthController");
-const isAdminLoggedIn = require("../middlewares/isAdminLoggedIn");
-const isEmployeeLoggedIn = require("../middlewares/isEmployeeLoggedIn");
+import { registeredUser, viewUsers, updateUsers, deleteUsers, viewUserByEmail, addLeave, employeeLoggedin, approveRejectLeave, ViewProfile, EmployeeLogout, MarkAttendance, ViewAttendanceByEmail, UpdateAttendance, ViewAttendance, viewAttendanceById, DeleteAttendance } from "../controllers/employeeAuthController.js";
+import isAdminLoggedIn from "../middlewares/isAdminLoggedIn.js";
+import isEmployeeLoggedIn from "../middlewares/isEmployeeLoggedIn.js";
 
 router.post("/registerUser", registeredUser);
 router.post("/employeeLogin", employeeLoggedin);
@@ -21,4 +21,4 @@ router.post("/deleteAttendance/:attendanceId", DeleteAttendance);
 router.get("/viewProfile", isEmployeeLoggedIn, ViewProfile);
 router.post("/employeeLogout", isEmployeeLoggedIn, EmployeeLogout);
 
-module.exports = router;
+export default router;

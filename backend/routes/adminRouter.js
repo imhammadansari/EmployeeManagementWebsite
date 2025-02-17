@@ -1,7 +1,7 @@
-const express = require('express');
+import express from 'express';
 const router = express.Router();
-const { adminRegistered, adminLoggedin, adminLoggedOut, adminName, ViewLeaveRequests } = require('../controllers/adminAuthController');
-const isAdminLoggedIn = require('../middlewares/isAdminLoggedIn');
+import { adminRegistered, adminLoggedin, adminLoggedOut, adminName } from '../controllers/adminAuthController.js';
+import isAdminLoggedIn from '../middlewares/isAdminLoggedIn.js';
 
 router.post("/adminRegister", adminRegistered);
 router.post("/adminLogin", adminLoggedin);
@@ -9,4 +9,4 @@ router.get("/getAdmin", isAdminLoggedIn, adminName);
 router.post("/adminLogout", isAdminLoggedIn, adminLoggedOut);
 
 
-module.exports = router;
+export default router;

@@ -1,6 +1,6 @@
-const departmentModel = require('../models/department-model');
+import departmentModel from '../models/department-model.js';
 
-module.exports.AddDepartment = async function (req, res) {
+export const AddDepartment = async function (req, res) {
     try {
       let { name } = req.body;
   
@@ -17,7 +17,7 @@ module.exports.AddDepartment = async function (req, res) {
   };
   
 
-module.exports.ViewDepartment = async function(req, res){
+  export const ViewDepartment = async function(req, res){
 
     const department = await departmentModel.find()
 
@@ -28,7 +28,7 @@ module.exports.ViewDepartment = async function(req, res){
     res.send({status: "ok", department})
 }
 
-module.exports.UpdateDepartment = async function(req, res){
+export const UpdateDepartment = async function(req, res){
     let {name} = req.body;
 
     const updateddepartment = await departmentModel.findOneAndUpdate(
@@ -42,7 +42,7 @@ module.exports.UpdateDepartment = async function(req, res){
     res.send({status: "ok", updateddepartment})
 }
 
-module.exports.DeleteDepartment = async function(req, res){
+export const DeleteDepartment = async function(req, res){
     let {name} = req.body;
 
     const deleteDepartment = await departmentModel.findOneAndDelete(

@@ -1,10 +1,8 @@
-const bcrypt = require("bcrypt");
-const jwt = require("jsonwebtoken");
+import bcrypt from "bcrypt";
+import jwt from "jsonwebtoken";
+import adminModel from "../models/admin-model.js";
 
-const adminModel = require("../models/admin-model");
-const employeeModel = require("../models/employee-model");
-
-module.exports.adminRegistered = async function (req, res) {
+export const adminRegistered = async function (req, res) {
     try {
         let {name, email, password} = req.body;
 
@@ -41,7 +39,7 @@ module.exports.adminRegistered = async function (req, res) {
 }
 
 
-module.exports.adminLoggedin = async function(req, res) {  
+export const adminLoggedin = async function(req, res) {  
     try {  
         let { email, password } = req.body;  
 
@@ -63,7 +61,7 @@ module.exports.adminLoggedin = async function(req, res) {
     }  
 }
 
-module.exports.adminName = async function (req, res) {
+export const adminName = async function (req, res) {
     try {
         const email = req.admin.email
         const admin = await adminModel.findOne({email: email});
@@ -76,7 +74,7 @@ module.exports.adminName = async function (req, res) {
     }
 }
 
-module.exports.adminLoggedOut =  async function (req, res) {
+export const adminLoggedOut =  async function (req, res) {
     try {
         if(req.cookies.token) {
             res.clearCookie("token");

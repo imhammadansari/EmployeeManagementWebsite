@@ -1,10 +1,10 @@
-const express = require('express');
-const { AddDepartment, ViewDepartment, UpdateDepartment, DeleteDepartment } = require('../controllers/departmentAuthController');
+import express from 'express';
 const router = express.Router();
+import { AddDepartment, ViewDepartment, UpdateDepartment, DeleteDepartment } from '../controllers/departmentAuthController.js';
 
 router.post("/addDepartment", AddDepartment)
 router.get("/viewDepartment", ViewDepartment)
 router.post("/updateDepartment", UpdateDepartment)
 router.post("/deleteDepartment", DeleteDepartment)
 
-module.exports = router;
+export default router;

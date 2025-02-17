@@ -1,6 +1,4 @@
-const mongoose = require('mongoose');
-
-mongoose.connect('mongodb://127.0.0.1:27017/employeeManagementSystem');
+import mongoose from 'mongoose';
 
 const employeeSchema = mongoose.Schema(
     {
@@ -39,4 +37,4 @@ const employeeSchema = mongoose.Schema(
 
 )
 
-module.exports = mongoose.model("employees", employeeSchema);
+export default mongoose.model("employees", employeeSchema);

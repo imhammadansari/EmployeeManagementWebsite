@@ -1,9 +1,8 @@
-const employeeModule = require("../models/employee-model");
-const bcrypt = require("bcrypt");
-const jwt = require("jsonwebtoken");
-const mongoose = require("mongoose");
+import employeeModule from "../models/employee-model.js";
+import bcrypt from "bcrypt";
+import jwt from "jsonwebtoken";
 
-module.exports.registeredUser = async function (req, res) {  
+export const registeredUser = async function (req, res) {  
     try {  
         let { firstname, lastname, email, password, phoneNumber, city, country, gender, designation, department, workinghours, salary } = req.body;  
 
@@ -35,7 +34,7 @@ module.exports.registeredUser = async function (req, res) {
     }  
 }
 
-module.exports.employeeLoggedin = async function(req, res) {
+export const employeeLoggedin = async function(req, res) {
     try {
         let {email, password} = req.body;
 
@@ -61,7 +60,7 @@ module.exports.employeeLoggedin = async function(req, res) {
     }
 }
 
-module.exports.viewUsers = async function (req, res) {
+export const viewUsers = async function (req, res) {
     try {
 
         let employee = await employeeModule.find();
@@ -77,7 +76,7 @@ module.exports.viewUsers = async function (req, res) {
         }    }
 }
 
-module.exports.viewUserByEmail = async function (req, res) {  
+export const viewUserByEmail = async function (req, res) {  
     try {  
         const email = req.params.email;  
         let employee = await employeeModule.findOne({ email });
@@ -92,7 +91,7 @@ module.exports.viewUserByEmail = async function (req, res) {
     }  
 };
 
-module.exports.ViewProfile = async function (req, res){
+export const ViewProfile = async function (req, res){
     try {
 
         const email = req.employee.email;
@@ -108,7 +107,7 @@ module.exports.ViewProfile = async function (req, res){
     }
 }
 
-module.exports.addLeave = async (req, res) => {
+export const addLeave = async (req, res) => {
     try {
         const { leavetype, department, days, status, comment } = req.body;
 
@@ -135,7 +134,7 @@ module.exports.addLeave = async (req, res) => {
     }
 }
 
-module.exports.approveRejectLeave = async (req, res) => {
+export const approveRejectLeave = async (req, res) => {
     try {
         const { employeeId, leaveId, status } = req.body;
 
@@ -162,7 +161,7 @@ module.exports.approveRejectLeave = async (req, res) => {
     }
 };
 
-module.exports.MarkAttendance = async function(req, res){
+export const MarkAttendance = async function(req, res){
     try {
         const {attendanceMark, date, time} = req.body;
 
@@ -191,7 +190,7 @@ module.exports.MarkAttendance = async function(req, res){
     }
 }
 
-module.exports.ViewAttendance = async function (req, res){
+export const ViewAttendance = async function (req, res){
     try {
         const employee = await employeeModule.find();
 
@@ -204,7 +203,7 @@ module.exports.ViewAttendance = async function (req, res){
     }
 }
 
-module.exports.viewAttendanceById = async function (req, res) {
+export const viewAttendanceById = async function (req, res) {
     try {
         const { attendanceId } = req.params;
 
@@ -229,7 +228,7 @@ module.exports.viewAttendanceById = async function (req, res) {
 };
 
 
-module.exports.ViewAttendanceByEmail = async function (req, res){
+export const ViewAttendanceByEmail = async function (req, res){
     try {
         const email = req.params.email;
 
@@ -244,7 +243,7 @@ module.exports.ViewAttendanceByEmail = async function (req, res){
     }
 }
 
-module.exports.UpdateAttendance = async function (req, res) {
+export const UpdateAttendance = async function (req, res) {
     try {
         const { attendanceMark} = req.body;
         const { attendanceId } = req.params;
@@ -270,7 +269,7 @@ module.exports.UpdateAttendance = async function (req, res) {
     }
 };
 
-module.exports.DeleteAttendance = async function (req, res){
+export const DeleteAttendance = async function (req, res){
     try {
         const {attendanceId} = req.params;
 
@@ -290,7 +289,7 @@ module.exports.DeleteAttendance = async function (req, res){
     }
 }
 
-module.exports.updateUsers = async function (req, res) {
+export const updateUsers = async function (req, res) {
     try {
         let {firstname, lastname, email, phoneNumber, city, country, gender, designation, department, workinghours, salary} = req.body;
 
@@ -314,7 +313,7 @@ module.exports.updateUsers = async function (req, res) {
 
 
 
-module.exports.deleteUsers = async function(req, res) {
+export const deleteUsers = async function(req, res) {
     try {
         let {email} = req.body;
 
@@ -331,7 +330,7 @@ module.exports.deleteUsers = async function(req, res) {
     }
 }
 
-module.exports.EmployeeLogout =  async function (req, res) {
+export const EmployeeLogout =  async function (req, res) {
     try {
         if(req.cookies.token) {
             res.clearCookie("token");
