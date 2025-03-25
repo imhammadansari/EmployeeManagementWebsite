@@ -11,7 +11,7 @@ const ApprovedLeaveRequests = () => {
 
     const getEmployees = async () => {
         try {
-            const response = await axios.get("http://localhost:8000/employees/viewUsers");
+            const response = await axios.get("https://employeemanagement-c46a.onrender.com/employees/viewUsers");
             setEmployees(response.data.employee);
         } catch (error) {
             console.log(error.message);

@@ -43,7 +43,7 @@ function AddEmployee() {
     }
 
     try {
-      const response = await axios.post("https://employeemanagementwebsite.onrender.com/employees/registerUser", {
+      const response = await axios.post("https://employeemanagement-c46a.onrender.com/employees/registerUser", {
         firstname,
         lastname,
         email,

@@ -19,7 +19,7 @@ const DeleteEmployee = () => {
         }
 
         try {
-            const response = await axios.post(`http://localhost:8000/employees/deleteUsers`, {
+            const response = await axios.post(`https://employeemanagement-c46a.onrender.com/employees/deleteUsers`, {
                 email: employeeEmail
             })
 

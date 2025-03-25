@@ -20,7 +20,7 @@ const DeleteDepartment = () => {
         }
 
         try {
-            const response = await axios.post(`http://localhost:8000/department/deleteDepartment`, {
+            const response = await axios.post(`https://employeemanagement-c46a.onrender.com/department/deleteDepartment`, {
                 name
             })
 

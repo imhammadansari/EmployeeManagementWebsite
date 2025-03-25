@@ -12,7 +12,7 @@ const ViewDepartment = () => {
 
   const getDepartment = async () => {
     try {
-      const response = await axios.get('http://localhost:8000/department/viewDepartment');
+      const response = await axios.get('https://employeemanagement-c46a.onrender.com/department/viewDepartment');
       setdepartmentname(response.data.department);
     } catch (error) {
       //   if(error.response){

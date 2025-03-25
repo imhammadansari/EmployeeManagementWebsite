@@ -29,7 +29,7 @@ function UpdateEmployee() {
         }
 
         try {
-            const response = await axios.get(`http://localhost:8000/employees/viewUsers/${employeeEmail}`);
+            const response = await axios.get(`https://employeemanagement-c46a.onrender.com/employees/viewUsers/${employeeEmail}`);
             const employeeData = response.data.employee;
 
             if (employeeData) {
@@ -69,7 +69,7 @@ function UpdateEmployee() {
         }
 
         try {
-            const response = await axios.post('http://localhost:8000/employees/updateUsers', {
+            const response = await axios.post('https://employeemanagement-c46a.onrender.com/employees/updateUsers', {
                 firstname, lastname, email, phoneNumber, country, city, gender, designation, department, workingHours, salary
             });
 
