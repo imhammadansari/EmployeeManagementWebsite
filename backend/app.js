@@ -6,6 +6,7 @@ import cors from 'cors';
 import bodyParser from "body-parser";
 import dotenv from "dotenv";
 import mongoose from 'mongoose';
+import axios from "axios";
 
 dotenv.config();
 
@@ -18,6 +19,22 @@ app.use(cors({
     origin: "https://employeemanagement-c46a.onrender.com", 
     credentials: true
 }));
+
+const url = `https://employeemanagement-c46a.onrender.com`;
+const interval = 30000;
+
+function reloadWebsite() {
+  axios
+    .get(url)
+    .then((response) => {
+      console.log("website reloded");
+    })
+    .catch((error) => {
+      console.error(`Error : ${error.message}`);
+    });
+}
+
+setInterval(reloadWebsite, interval);
 
 const PORT = process.env.PORT || 8080;
 const URL = process.env.MONGODB_URL;

@@ -56,6 +56,10 @@ const EmployeeLogin = () => {
             }} />
 
             <button className='border border-black hover:bg-black hover:text-white w-28 h-9' type='submit'>Submit</button>
+            <div className='flex flex-col gap-4 pt-2 md:pt-4 text-xs md:text-sm text-black items-center justify-center'>
+              <p>email: hammad@example.com</p>
+              <p>password: 12345</p>
+            </div>
             <Link to='/home'>
             <button className='border border-black hover:bg-black hover:text-white w-28 h-9 mt-20' type='submit'>Back to Home</button>
             </Link>
