@@ -20,6 +20,21 @@ app.use(cors({
     credentials: true
 }));
 
+
+const PORT = process.env.PORT || 8080;
+const URL = process.env.MONGODB_URL;
+const connectDb = async () => {
+    try {
+        await mongoose.connect(URL);
+        console.log("Connect Successful")
+    } catch (error) {
+        console.error("MongoDB connection failed:", error.message);
+        process.exit(1); 
+    }
+}
+
+connectDb();
+
 const url = `https://employeemanagement-c46a.onrender.com`;
 const interval = 30000;
 
@@ -35,20 +50,6 @@ function reloadWebsite() {
 }
 
 setInterval(reloadWebsite, interval);
-
-const PORT = process.env.PORT || 8080;
-const URL = process.env.MONGODB_URL;
-const connectDb = async () => {
-    try {
-        await mongoose.connect(URL);
-        console.log("Connect Successful")
-    } catch (error) {
-        console.error("MongoDB connection failed:", error.message);
-        process.exit(1); 
-    }
-}
-
-connectDb();
 
 app.use(express.json());
 app.use(express.urlencoded( { extended: true } ));
